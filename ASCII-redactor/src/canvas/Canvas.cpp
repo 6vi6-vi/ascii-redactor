@@ -56,7 +56,7 @@ void Canvas::restoreFromMemento(const Memento& memento) {
 
 void Canvas::setCurrentChar(char ch) {
     currentChar = ch;
-    notifyStateChanged("Текущий символ изменён на '" + string(1, ch) + "'");
+    notifyStateChanged("Current character changed to '" + string(1, ch) + "'");
 }
 
 void Canvas::setPixel(int x, int y, char ch) {
@@ -147,7 +147,7 @@ void Canvas::floodFillImpl(int x, int y, char newChar) {
         st.push({ cx, cy - 1 });
     }
     notifyCanvasChanged();
-    notifyStateChanged("Область залита символом '" + string(1, newChar) + "'");
+    notifyStateChanged("Area filled with '" + string(1, newChar) + "'");
 }
 
 void Canvas::clearImpl() {
@@ -157,7 +157,7 @@ void Canvas::clearImpl() {
         }
     }
     notifyCanvasChanged();
-    notifyStateChanged("Холст очищен");
+    notifyStateChanged("Canvas cleared");
 }
 
 bool Canvas::saveToFile(const string& filename) {
@@ -170,7 +170,7 @@ bool Canvas::saveToFile(const string& filename) {
         }
         file << endl;
     }
-    notifyStateChanged("Сохранено в файл: " + filename);
+    notifyStateChanged("Saved to file: " + filename);
     return true;
 }
 
@@ -191,6 +191,6 @@ bool Canvas::loadFromFile(const string& filename) {
 
     grid = newGrid;
     notifyCanvasChanged();
-    notifyStateChanged("Загружено из файла: " + filename);
+    notifyStateChanged("Loaded from file: " + filename);
     return true;
 }

@@ -2,6 +2,7 @@
 #include "observer/ConsoleRenderer.h"
 #include "canvas/Canvas.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -11,10 +12,12 @@ void ConsoleRenderer::onCanvasChanged(const Canvas& canvas) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     system("cls");
 
+    // Top border
     cout << "=";
     for (int x = 0; x < width + 2; x++) cout << "=";
     cout << "=" << endl;
 
+    // Canvas
     for (int y = 0; y < height; y++) {
         cout << "| ";
         for (int x = 0; x < width; x++) {
@@ -30,19 +33,21 @@ void ConsoleRenderer::onCanvasChanged(const Canvas& canvas) {
         cout << " |" << endl;
     }
 
+    // Bottom border
     cout << "=";
     for (int x = 0; x < width + 2; x++) cout << "=";
     cout << "=" << endl;
 
+    // Control panel
     cout << " ===============================================================================" << endl;
-    cout << "| Текущий символ: [" << canvas.getCurrentChar() << "]     Активный инструмент: " << currentToolName;
-    for (int i = 0; i < 35 - (int)currentToolName.length(); i++) cout << " ";
+    cout << "| Current char: [" << canvas.getCurrentChar() << "]     Active tool: " << currentToolName;
+    for (int i = 0; i < 43 - (int)currentToolName.length(); i++) cout << " ";
     cout << "|" << endl;
 
     if (!currentStatusMsg.empty()) {
         SetConsoleTextAttribute(hConsole, 14);
-        cout << "| [СТАТУС] " << currentStatusMsg;
-        for (int i = 0; i < 58 - (int)currentStatusMsg.length(); i++) cout << " ";
+        cout << "| [STATUS] " << currentStatusMsg;
+        for (int i = 0; i < 69 - (int)currentStatusMsg.length(); i++) cout << " ";
         cout << "|" << endl;
         SetConsoleTextAttribute(hConsole, 7);
     }
@@ -50,12 +55,12 @@ void ConsoleRenderer::onCanvasChanged(const Canvas& canvas) {
         cout << "|                                                                               |" << endl;
     }
 
-    cout << "| Управление:                                                                   |" << endl;
-    cout << "|   [Стрелки] - движение курсора   [L] - линия        [R] - прямоугольник          |" << endl;
-    cout << "|   [F] - заливка               [C] - очистить     [U] - отмена (Undo)          |" << endl;
-    cout << "|   [S] - сохранить             [O] - загрузить    [H] - помощь                 |" << endl;
-    cout << "|   [1-9, символы] - выбрать символ                                             |" << endl;
-    cout << "|   [Q] - выход                                                                 |" << endl;
+    cout << "| Controls:                                                                     |" << endl;
+    cout << "|   [Arrows] - move cursor   [L] - line        [R] - rectangle                  |" << endl;
+    cout << "|   [F] - flood fill       [C] - clear        [U] - undo                        |" << endl;
+    cout << "|   [S] - save             [O] - load         [H] - help                        |" << endl;
+    cout << "|   [1-9, chars] - select character                                             |" << endl;
+    cout << "|   [Q] - exit                                                                  |" << endl;
     cout << " ===============================================================================" << endl;
 }
 

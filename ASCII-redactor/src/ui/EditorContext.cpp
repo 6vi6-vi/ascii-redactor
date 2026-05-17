@@ -64,7 +64,7 @@ void EditorContext::handleCursorMove(int dx, int dy) {
 }
 
 string EditorContext::getCurrentToolName() const {
-    return currentState ? currentState->getName() : "Курсор";
+    return currentState ? currentState->getName() : "Cursor";
 }
 
 string EditorContext::getStatusMessage() const {

@@ -9,5 +9,5 @@ void ClearCommand::execute() {
 }
 
 string ClearCommand::getDescription() const {
-    return "Очистка всего холста";
+    return "Clear entire canvas";
 }

@@ -14,7 +14,7 @@ void LineToolState::onKeyPress(char key) {
             startX = canvas->getCursorX();
             startY = canvas->getCursorY();
             waitingForSecondPoint = true;
-            canvas->notifyStateChanged("Первая точка выбрана. Переместите курсор ко второй точке и нажмите Enter");
+            canvas->notifyStateChanged("First point selected. Move cursor to second point and press Enter");
             canvas->notifyToolChanged(context->getCurrentToolName(), getStatusMessage());
         }
         else {
@@ -25,13 +25,13 @@ void LineToolState::onKeyPress(char key) {
             );
             context->executeCommand(cmd);
             context->setState(new CursorState());
-            canvas->notifyStateChanged("Линия нарисована. Возврат в режим курсора");
+            canvas->notifyStateChanged("Line drawn. Returned to cursor mode");
         }
     }
     else if (key == 27) {
         waitingForSecondPoint = false;
         context->setState(new CursorState());
-        canvas->notifyStateChanged("Режим рисования линии отменен");
+        canvas->notifyStateChanged("Line drawing mode cancelled");
     }
 }
 
@@ -40,11 +40,11 @@ void LineToolState::onCursorMove(int dx, int dy) {
 }
 
 string LineToolState::getName() const {
-    return "Линия";
+    return "Line";
 }
 
 string LineToolState::getStatusMessage() const {
-    return waitingForSecondPoint ? "Выберите вторую точку линии (Enter)" : "Выберите первую точку линии (Enter)";
+    return waitingForSecondPoint ? "Select second point (Enter)" : "Select first point (Enter)";
 }
 
 bool LineToolState::isDrawingMode() const {

@@ -2,7 +2,8 @@
 #include "canvas/Canvas.h"
 
 FloodFillCommand::FloodFillCommand(Canvas* c, int x, int y, char newChar)
-    : Command(c), x(x), y(y), newChar(newChar) {}
+    : Command(c), x(x), y(y), newChar(newChar) {
+}
 
 void FloodFillCommand::execute() {
     saveBackup();
@@ -10,5 +11,5 @@ void FloodFillCommand::execute() {
 }
 
 string FloodFillCommand::getDescription() const {
-    return "Заливка в точке (" + to_string(x) + "," + to_string(y) + ")";
+    return "Flood fill at point (" + to_string(x) + "," + to_string(y) + ")";
 }

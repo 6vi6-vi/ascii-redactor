@@ -7,9 +7,9 @@ void CursorState::onCursorMove(int dx, int dy) {
 }
 
 string CursorState::getName() const {
-    return "Курсор";
+    return "Cursor";
 }
 
 string CursorState::getStatusMessage() const {
-    return "Режим выбора";
+    return "Selection mode";
 }

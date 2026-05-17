@@ -10,20 +10,17 @@
 using namespace std;
 
 int main() {
-    SetConsoleOutputCP(CP_UTF8);
-    setlocale(LC_ALL, "Russian");
-
     int width, height;
 
     cout << "==========================================================" << endl;
     cout << "|                   ASCII DRAW STUDIO                    |" << endl;
-    cout << "|                 Редактор псевдографики                 |" << endl;
+    cout << "|                 ASCII Graphics Editor                  |" << endl;
     cout << "==========================================================" << endl;
     cout << endl;
-    cout << "Введите размеры холста (от 40x20 до 200x100)" << endl;
-    cout << "Ширина (40-200): ";
+    cout << "Enter canvas size (40x20 to 200x100)" << endl;
+    cout << "Width (40-200): ";
     cin >> width;
-    cout << "Высота (20-100): ";
+    cout << "Height (20-100): ";
     cin >> height;
 
     Canvas canvas(width, height);
@@ -44,8 +41,7 @@ int main() {
             continue;
         }
 
-        int ch = _getch();
-        char key = static_cast<char>(ch);
+        char key = _getch();
 
         if (key == -32 || key == 224) {
             key = _getch();

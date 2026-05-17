@@ -13,33 +13,32 @@ using namespace std;
 
 void InputHandler::showHelp() {
     system("cls");
-    cout << "==================== ПОМОЩЬ ====================" << endl;
-    cout << "Управление курсором:" << endl;
-    cout << "  Стрелки - перемещение курсора" << endl;
+    cout << "==================== HELP ====================" << endl;
+    cout << "Cursor control:" << endl;
+    cout << "  Arrows - move cursor" << endl;
     cout << endl;
-    cout << "Инструменты:" << endl;
-    cout << "  L - режим рисования линии" << endl;
-    cout << "  R - режим рисования прямоугольника" << endl;
-    cout << "  F - заливка области" << endl;
-    cout << "  C - очистить весь холст" << endl;
-    cout << "  U - отменить последнее действие" << endl;
-    cout << "  Ctrl+Z - отменить (альтернатива)" << endl;
-    cout << "  Ctrl+Y - повторить" << endl;
+    cout << "Tools:" << endl;
+    cout << "  L - line drawing mode" << endl;
+    cout << "  R - rectangle drawing mode" << endl;
+    cout << "  F - flood fill" << endl;
+    cout << "  C - clear canvas" << endl;
+    cout << "  U - undo" << endl;
+    cout << "  Ctrl+Z - undo" << endl;
+    cout << "  Ctrl+Y - redo" << endl;
     cout << endl;
-    cout << "Работа с файлами:" << endl;
-    cout << "  S - сохранить в файл (.ascii или .txt)" << endl;
-    cout << "  O - загрузить из файла (.ascii или .txt)" << endl;
+    cout << "File operations:" << endl;
+    cout << "  S - save to file (.ascii or .txt)" << endl;
+    cout << "  O - load from file (.ascii or .txt)" << endl;
     cout << endl;
-    cout << "Символы:" << endl;
-    cout << "  Любой печатный символ - установить текущий символ" << endl;
-    cout << "  1-9 - быстрый выбор: @ # % * + - = | /" << endl;
+    cout << "Characters:" << endl;
+    cout << "  Any printable character - set current character" << endl;
     cout << endl;
-    cout << "Прочее:" << endl;
-    cout << "  H - показать эту справку" << endl;
-    cout << "  Q - выход" << endl;
+    cout << "Other:" << endl;
+    cout << "  H - show this help" << endl;
+    cout << "  Q - exit" << endl;
     cout << endl;
     cout << "================================================" << endl;
-    cout << "Нажмите любую клавишу для продолжения...";
+    cout << "Press any key to continue...";
     _getch();
     context->getCanvas()->notifyCanvasChanged();
 }
@@ -47,17 +46,6 @@ void InputHandler::showHelp() {
 InputHandler::InputHandler(EditorContext* ctx) : context(ctx) {}
 
 void InputHandler::handleKeyPress(char key) {
-    switch (key) {
-    case '1': context->getCanvas()->setCurrentChar('@'); return;
-    case '2': context->getCanvas()->setCurrentChar('#'); return;
-    case '3': context->getCanvas()->setCurrentChar('%'); return;
-    case '4': context->getCanvas()->setCurrentChar('*'); return;
-    case '5': context->getCanvas()->setCurrentChar('+'); return;
-    case '6': context->getCanvas()->setCurrentChar('-'); return;
-    case '7': context->getCanvas()->setCurrentChar('='); return;
-    case '8': context->getCanvas()->setCurrentChar('|'); return;
-    case '9': context->getCanvas()->setCurrentChar('/'); return;
-    }
 
     if (key == 'L' || key == 'l') {
         if (!context->isDrawingMode()) {
@@ -100,7 +88,7 @@ void InputHandler::handleKeyPress(char key) {
             return;
         case 'S': case 's': {
             string filename;
-            cout << "Имя файла для сохранения (.ascii): ";
+            cout << "Save file name (.ascii): ";
             cin >> filename;
             if (filename.find('.') == string::npos) filename += ".ascii";
             context->getCanvas()->saveToFile(filename);
@@ -110,7 +98,7 @@ void InputHandler::handleKeyPress(char key) {
         }
         case 'O': case 'o': {
             string filename;
-            cout << "Имя файла для загрузки (.ascii или .txt): ";
+            cout << "Load file name (.ascii or .txt): ";
             cin >> filename;
             context->getCanvas()->loadFromFile(filename);
             _getch();

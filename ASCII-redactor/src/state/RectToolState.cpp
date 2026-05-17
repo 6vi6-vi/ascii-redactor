@@ -14,7 +14,7 @@ void RectToolState::onKeyPress(char key) {
             startX = canvas->getCursorX();
             startY = canvas->getCursorY();
             waitingForSecondPoint = true;
-            canvas->notifyStateChanged("Первый угол выбран. Переместите курсор ко второму углу и нажмите Enter");
+            canvas->notifyStateChanged("First corner selected. Move cursor to second corner and press Enter");
             canvas->notifyToolChanged(context->getCurrentToolName(), getStatusMessage());
         }
         else {
@@ -25,13 +25,13 @@ void RectToolState::onKeyPress(char key) {
             );
             context->executeCommand(cmd);
             context->setState(new CursorState());
-            canvas->notifyStateChanged("Прямоугольник нарисован. Возврат в режим курсора");
+            canvas->notifyStateChanged("Rectangle drawn. Returned to cursor mode");
         }
     }
     else if (key == 27) {
         waitingForSecondPoint = false;
         context->setState(new CursorState());
-        canvas->notifyStateChanged("Режим рисования прямоугольника отменен");
+        canvas->notifyStateChanged("Rectangle drawing mode cancelled");
     }
 }
 
@@ -40,11 +40,11 @@ void RectToolState::onCursorMove(int dx, int dy) {
 }
 
 string RectToolState::getName() const {
-    return "Прямоугольник";
+    return "Rectangle";
 }
 
 string RectToolState::getStatusMessage() const {
-    return waitingForSecondPoint ? "Выберите второй угол (Enter)" : "Выберите первый угол (Enter)";
+    return waitingForSecondPoint ? "Select second corner (Enter)" : "Select first corner (Enter)";
 }
 
 bool RectToolState::isDrawingMode() const {

@@ -23,8 +23,8 @@ events:
       
       The output was:
       0
-      Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.44.35216 для x86
-      (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+      ЋЇвЁ¬Ё§ЁагойЁ© Є®¬ЇЁ«пв®а Microsoft (R) C/C++ ўҐабЁЁ 19.44.35216 ¤«п x86
+      (C) Љ®аЇ®а жЁп Њ ©Єа®б®дв (Microsoft Corporation).  ‚бҐ Їа ў  § йЁйҐ­л.
       
       CMakeCXXCompilerId.cpp
       Microsoft (R) Incremental Linker Version 14.44.35216.0
@@ -51,9 +51,9 @@ events:
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
-        Примечание: включение файла:  C:\\PCS\\4 semester\\new-project\\ASCII-redactor\\ASCII-redactor\\build\\CMakeFiles\\ShowIncludes\\foo.h
+        ЏаЁ¬Ґз ­ЁҐ: ўЄ«озҐ­ЁҐ д ©« :  C:\\PCS\\4 semester\\new-project\\ASCII-redactor\\ASCII-redactor\\build\\CMakeFiles\\ShowIncludes\\foo.h
         
-      Found prefix "Примечание: включение файла:  "
+      Found prefix "ЏаЁ¬Ґз ­ЁҐ: ўЄ«озҐ­ЁҐ д ©« :  "
   -
     kind: "try_compile-v1"
     backtrace:
@@ -63,8 +63,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/CMakeScratch/TryCompile-q610uu"
-      binary: "C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/CMakeScratch/TryCompile-q610uu"
+      source: "C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/CMakeScratch/TryCompile-cnn4t3"
+      binary: "C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/CMakeScratch/TryCompile-cnn4t3"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -74,11 +74,12 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/CMakeScratch/TryCompile-q610uu'
+        Change Dir: 'C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/CMakeScratch/TryCompile-cnn4t3'
         
-        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_50b83
-        [1/2] C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx86\\x86\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_50b83.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_50b83.dir\\ /FS -c C:\\msys64\\mingw64\\share\\cmake\\Modules\\CMakeCXXCompilerABI.cpp
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\cmake.exe -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_50b83.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx86\\x86\\link.exe /nologo CMakeFiles\\cmTC_50b83.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_50b83.exe /implib:cmTC_50b83.lib /pdb:cmTC_50b83.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): C:/msys64/mingw64/bin/ninja.exe -v cmTC_167fe
+        [1/2] C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx86\\x86\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_167fe.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_167fe.dir\\ /FS -c C:\\msys64\\mingw64\\share\\cmake\\Modules\\CMakeCXXCompilerABI.cpp
+        ЏаЁ¬Ґз ­ЁҐ: ўЄ«озҐ­ЁҐ д ©« :  C:\\msys64\\mingw64\\share\\cmake\\Modules\\CMakeCompilerABI.h
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && C:\\msys64\\mingw64\\bin\\cmake.exe -E vs_link_exe --msvc-ver=1944 --intdir=CMakeFiles\\cmTC_167fe.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x86\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~3\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1444~1.352\\bin\\Hostx86\\x86\\link.exe /nologo CMakeFiles\\cmTC_167fe.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_167fe.exe /implib:cmTC_167fe.lib /pdb:cmTC_167fe.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -

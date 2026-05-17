@@ -18,6 +18,6 @@ void Command::saveBackup() {
 void Command::undo() {
     if (backup) {
         canvas->restoreFromMemento(*backup);
-        canvas->notifyStateChanged("Действие отменено");
+        canvas->notifyStateChanged("Action undone");
     }
 }
