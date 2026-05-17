@@ -12,16 +12,16 @@
 
 ## Сборка проекта
 
-# Клонирование репозитория
+### Клонирование репозитория
 git clone <https://github.com/6vi6-vi/ASCII-redactor.git>
 cd ASCII-redactor
 
-# Создание директории для сборки
+### Создание директории для сборки
 cmake -S . -B build
 
-# Компиляция
+### Компиляция
 cmake --build build 
 
-# Запуск (Windows)
+### Запуск (Windows)
 cd build/bin
 ./AsciiDrawStudio.exe
