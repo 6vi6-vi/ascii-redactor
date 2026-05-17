@@ -57,6 +57,7 @@ void Canvas::restoreFromMemento(const Memento& memento) {
 void Canvas::setCurrentChar(char ch) {
     currentChar = ch;
     notifyStateChanged("Current character changed to '" + string(1, ch) + "'");
+    notifyCanvasChanged();
 }
 
 void Canvas::setPixel(int x, int y, char ch) {

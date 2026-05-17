@@ -32,3 +32,5 @@
 795	1037	8007594667104619	bin/AsciiDrawStudio.exe	5abed115b9c6255c
 32	759	8007595202908476	CMakeFiles/AsciiDrawStudio.dir/src/observer/ConsoleRenderer.cpp.obj	300925a185f2d864
 761	996	8007595210202095	bin/AsciiDrawStudio.exe	5abed115b9c6255c
+46	1298	8007605970045926	CMakeFiles/AsciiDrawStudio.dir/src/canvas/Canvas.cpp.obj	d452f4e15895bea1
+1300	1592	8007605982560246	bin/AsciiDrawStudio.exe	5abed115b9c6255c
