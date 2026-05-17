@@ -1,0 +1,19 @@
+# ninja log v6
+42	1023	8007561423387555	CMakeFiles/AsciiDrawStudio.dir/src/canvas/Memento.cpp.obj	87694544a42eb6d6
+54	1089	8007561423503682	CMakeFiles/AsciiDrawStudio.dir/src/command/Command.cpp.obj	103927871980dd9f
+68	1094	8007561423629192	CMakeFiles/AsciiDrawStudio.dir/src/command/CommandHistory.cpp.obj	b28c595d5b663939
+77	1097	8007561423709177	CMakeFiles/AsciiDrawStudio.dir/src/command/DrawLineCommand.cpp.obj	c704c6dc09199242
+96	1109	8007561423907005	CMakeFiles/AsciiDrawStudio.dir/src/command/FloodFillCommand.cpp.obj	1888213aed72fce
+116	1111	8007561424103690	CMakeFiles/AsciiDrawStudio.dir/src/state/CursorState.cpp.obj	34299b60b0dd2b6
+106	1197	8007561424006992	CMakeFiles/AsciiDrawStudio.dir/src/command/ClearCommand.cpp.obj	4f7aba0664e5a869
+87	1359	8007561423828652	CMakeFiles/AsciiDrawStudio.dir/src/command/DrawRectCommand.cpp.obj	a83cbd1e145d8779
+134	1510	8007561424290289	CMakeFiles/AsciiDrawStudio.dir/src/state/RectToolState.cpp.obj	c74fd327bc94387b
+125	1672	8007561424194872	CMakeFiles/AsciiDrawStudio.dir/src/state/LineToolState.cpp.obj	8722a2300e5e2c03
+153	1693	8007561424485373	CMakeFiles/AsciiDrawStudio.dir/src/ui/EditorContext.cpp.obj	1dacf1d2bdf1b563
+34	1733	8007561423285129	CMakeFiles/AsciiDrawStudio.dir/src/canvas/Canvas.cpp.obj	d452f4e15895bea1
+23	1880	8007561423174519	CMakeFiles/AsciiDrawStudio.dir/src/main.cpp.obj	30350a64b3343914
+145	1918	8007561424401977	CMakeFiles/AsciiDrawStudio.dir/src/observer/ConsoleRenderer.cpp.obj	300925a185f2d864
+1038	2316	8007561433561345	CMakeFiles/AsciiDrawStudio.dir/src/ui/InputHandler.cpp.obj	ac692f602ecf3eaf
+2316	3200	8007561446119191	bin/AsciiDrawStudio.exe	5abed115b9c6255c
+49	949	8007566074822049	CMakeFiles/AsciiDrawStudio.dir/src/main.cpp.obj	30350a64b3343914
+951	1256	8007566083847709	bin/AsciiDrawStudio.exe	5abed115b9c6255c
