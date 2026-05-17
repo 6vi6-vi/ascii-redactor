@@ -13,8 +13,7 @@ int main() {
     int width, height;
 
     cout << "==========================================================" << endl;
-    cout << "|                   ASCII DRAW STUDIO                    |" << endl;
-    cout << "|                 ASCII Graphics Editor                  |" << endl;
+    cout << "|                   ASCII PAINT                          |" << endl;
     cout << "==========================================================" << endl;
     cout << endl;
     cout << "Enter canvas size (40x20 to 200x100)" << endl;

@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: AsciiDrawStudio
+# Project: ascii_paint
 # Configurations: Debug
 # =============================================================================
 
@@ -41,169 +41,169 @@ include CMakeFiles\rules.ninja
 
 cmake_ninja_workdir = C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\build\
 # =============================================================================
-# Object build statements for EXECUTABLE target AsciiDrawStudio
+# Object build statements for EXECUTABLE target ascii_paint
 
 
 #############################################
-# Order-only phony target for AsciiDrawStudio
+# Order-only phony target for ascii_paint
 
-build cmake_object_order_depends_target_AsciiDrawStudio: phony || .
+build cmake_object_order_depends_target_ascii_paint: phony || .
 
-build CMakeFiles\AsciiDrawStudio.dir\src\main.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\main.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\main.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\main.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\canvas\Canvas.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\canvas\Canvas.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\canvas\Canvas.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\canvas\Canvas.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\canvas
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\canvas
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\canvas\Memento.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\canvas\Memento.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\canvas\Memento.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\canvas\Memento.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\canvas
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\canvas
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\command\Command.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\Command.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\command\Command.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\Command.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\command
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\command
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\command\CommandHistory.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\CommandHistory.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\command\CommandHistory.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\CommandHistory.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\command
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\command
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\command\DrawLineCommand.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\DrawLineCommand.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\command\DrawLineCommand.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\DrawLineCommand.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\command
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\command
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\command\DrawRectCommand.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\DrawRectCommand.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\command\DrawRectCommand.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\DrawRectCommand.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\command
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\command
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\command\FloodFillCommand.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\FloodFillCommand.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\command\FloodFillCommand.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\FloodFillCommand.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\command
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\command
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\command\ClearCommand.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\ClearCommand.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\command\ClearCommand.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\command\ClearCommand.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\command
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\command
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\state\CursorState.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\state\CursorState.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\state\CursorState.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\state\CursorState.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\state
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\state
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\state\LineToolState.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\state\LineToolState.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\state\LineToolState.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\state\LineToolState.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\state
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\state
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\state\RectToolState.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\state\RectToolState.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\state\RectToolState.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\state\RectToolState.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\state
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\state
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\observer\ConsoleRenderer.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\observer\ConsoleRenderer.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\observer\ConsoleRenderer.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\observer\ConsoleRenderer.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\observer
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\observer
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\ui\EditorContext.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\ui\EditorContext.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\ui\EditorContext.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\ui\EditorContext.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\ui
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\ui
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
-build CMakeFiles\AsciiDrawStudio.dir\src\ui\InputHandler.cpp.obj: CXX_COMPILER__AsciiDrawStudio_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\ui\InputHandler.cpp || cmake_object_order_depends_target_AsciiDrawStudio
+build CMakeFiles\ascii_paint.dir\src\ui\InputHandler.cpp.obj: CXX_COMPILER__ascii_paint_unscanned_Debug C$:\PCS\4$ semester\new-project\ASCII-redactor\ASCII-redactor\src\ui\InputHandler.cpp || cmake_object_order_depends_target_ascii_paint
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /W4 /utf-8 /wd4100
   INCLUDES = -I"C:\PCS\4 semester\new-project\ASCII-redactor\ASCII-redactor\include"
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
-  OBJECT_FILE_DIR = CMakeFiles\AsciiDrawStudio.dir\src\ui
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
+  OBJECT_FILE_DIR = CMakeFiles\ascii_paint.dir\src\ui
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_PDB = bin\ascii_paint.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target AsciiDrawStudio
+# Link build statements for EXECUTABLE target ascii_paint
 
 
 #############################################
-# Link the executable bin\AsciiDrawStudio.exe
+# Link the executable bin\ascii_paint.exe
 
-build bin\AsciiDrawStudio.exe: CXX_EXECUTABLE_LINKER__AsciiDrawStudio_Debug CMakeFiles\AsciiDrawStudio.dir\src\main.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\canvas\Canvas.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\canvas\Memento.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\command\Command.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\command\CommandHistory.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\command\DrawLineCommand.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\command\DrawRectCommand.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\command\FloodFillCommand.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\command\ClearCommand.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\state\CursorState.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\state\LineToolState.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\state\RectToolState.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\observer\ConsoleRenderer.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\ui\EditorContext.cpp.obj CMakeFiles\AsciiDrawStudio.dir\src\ui\InputHandler.cpp.obj
+build bin\ascii_paint.exe: CXX_EXECUTABLE_LINKER__ascii_paint_Debug CMakeFiles\ascii_paint.dir\src\main.cpp.obj CMakeFiles\ascii_paint.dir\src\canvas\Canvas.cpp.obj CMakeFiles\ascii_paint.dir\src\canvas\Memento.cpp.obj CMakeFiles\ascii_paint.dir\src\command\Command.cpp.obj CMakeFiles\ascii_paint.dir\src\command\CommandHistory.cpp.obj CMakeFiles\ascii_paint.dir\src\command\DrawLineCommand.cpp.obj CMakeFiles\ascii_paint.dir\src\command\DrawRectCommand.cpp.obj CMakeFiles\ascii_paint.dir\src\command\FloodFillCommand.cpp.obj CMakeFiles\ascii_paint.dir\src\command\ClearCommand.cpp.obj CMakeFiles\ascii_paint.dir\src\state\CursorState.cpp.obj CMakeFiles\ascii_paint.dir\src\state\LineToolState.cpp.obj CMakeFiles\ascii_paint.dir\src\state\RectToolState.cpp.obj CMakeFiles\ascii_paint.dir\src\observer\ConsoleRenderer.cpp.obj CMakeFiles\ascii_paint.dir\src\ui\EditorContext.cpp.obj CMakeFiles\ascii_paint.dir\src\ui\InputHandler.cpp.obj
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = user32.lib  gdi32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\AsciiDrawStudio.dir
+  OBJECT_DIR = CMakeFiles\ascii_paint.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\AsciiDrawStudio.dir\
-  TARGET_FILE = bin\AsciiDrawStudio.exe
-  TARGET_IMPLIB = AsciiDrawStudio.lib
-  TARGET_PDB = bin\AsciiDrawStudio.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\ascii_paint.dir\
+  TARGET_FILE = bin\ascii_paint.exe
+  TARGET_IMPLIB = ascii_paint.lib
+  TARGET_PDB = bin\ascii_paint.pdb
 
 
 #############################################
@@ -231,9 +231,9 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build AsciiDrawStudio: phony bin\AsciiDrawStudio.exe
+build ascii_paint: phony bin\ascii_paint.exe
 
-build AsciiDrawStudio.exe: phony bin\AsciiDrawStudio.exe
+build ascii_paint.exe: phony bin\ascii_paint.exe
 
 # =============================================================================
 # Folder targets.
@@ -243,7 +243,7 @@ build AsciiDrawStudio.exe: phony bin\AsciiDrawStudio.exe
 #############################################
 # Folder: C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build
 
-build all: phony bin\AsciiDrawStudio.exe
+build all: phony bin\ascii_paint.exe
 
 # =============================================================================
 # Built-in targets
