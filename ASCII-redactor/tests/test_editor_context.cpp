@@ -57,17 +57,14 @@ TEST_CASE_METHOD(EditorContextFixture, "EditorContext state management", "[edito
         context.setState(new LineToolState());
         REQUIRE(context.getCurrentToolName() == "Line");
         REQUIRE(context.isDrawingMode());
-        // Статус может меняться в зависимости от состояния
-        REQUIRE((context.getStatusMessage() == "Select first point (Enter)" ||
-            context.getStatusMessage() == "Select first point (Enter)"));
+        REQUIRE(context.getStatusMessage() == "Select first point (Enter)");
     }
 
     SECTION("Set RectToolState") {
         context.setState(new RectToolState());
         REQUIRE(context.getCurrentToolName() == "Rectangle");
         REQUIRE(context.isDrawingMode());
-        REQUIRE((context.getStatusMessage() == "Select first corner (Enter)" ||
-            context.getStatusMessage() == "Select first corner (Enter)"));
+        REQUIRE(context.getStatusMessage() == "Select first corner (Enter)");
     }
 
     SECTION("State transition") {
@@ -111,10 +108,7 @@ TEST_CASE_METHOD(EditorContextFixture, "EditorContext cursor movement", "[editor
 }
 
 TEST_CASE_METHOD(EditorContextFixture, "EditorContext undo/redo", "[editor]") {
-    // Сначала нужно создать команду через executeCommand
     SECTION("Execute command through context") {
-        // Временно создадим команду через DrawLineCommand
-        // Для теста используем прямой executeCommand
         DrawLineCommand* cmd = new DrawLineCommand(&canvas, 0, 0, 5, 5, '#');
         context.executeCommand(cmd);
 
@@ -145,33 +139,6 @@ TEST_CASE_METHOD(EditorContextFixture, "EditorContext undo/redo", "[editor]") {
     }
 }
 
-// Тесты для LineToolState с mock-контекстом
-// Эти тесты проверяют, что состояние правильно обрабатывает нажатия клавиш
-TEST_CASE_METHOD(EditorContextFixture, "LineToolState key handling", "[editor][state]") {
-    context.setState(new LineToolState());
-
-    SECTION("First Enter selects first point") {
-        // Устанавливаем курсор в позицию
-        canvas.setCursorPosition(10, 10);
-
-        // Имитируем нажатие Enter в состоянии LineToolState
-        // Примечание: onKeyPress вызывает notifyStateChanged
-        // Мы не можем напрямую проверить внутреннее состояние,
-        // но можем проверить, что после второго Enter линия рисуется
-    }
-}
-
-// Тесты для RectToolState с mock-контекстом
-TEST_CASE_METHOD(EditorContextFixture, "RectToolState key handling", "[editor][state]") {
-    context.setState(new RectToolState());
-
-    SECTION("First Enter selects first corner") {
-        canvas.setCursorPosition(5, 5);
-        // Аналогично LineToolState
-    }
-}
-
-// Тесты для CursorState
 TEST_CASE_METHOD(EditorContextFixture, "CursorState key handling", "[editor][state]") {
     context.setState(new CursorState());
 
@@ -179,8 +146,6 @@ TEST_CASE_METHOD(EditorContextFixture, "CursorState key handling", "[editor][sta
         canvas.setCursorPosition(10, 10);
         canvas.setCurrentChar('#');
 
-        // Нажатие любой клавиши (кроме L/R) в CursorState должно менять символ
-        // через InputHandler, а не через состояние
         REQUIRE(canvas.getCurrentChar() == '#');
     }
 }
