@@ -7,7 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-set(SOURCES
+set(LIB_SOURCES
     src/canvas/Canvas.cpp
     src/canvas/Memento.cpp
     src/command/Command.cpp
@@ -24,22 +24,15 @@ set(SOURCES
     src/ui/InputHandler.cpp
 )
 
-add_executable(ascii_paint src/main.cpp ${SOURCES})
+add_library(ascii_paint_lib STATIC ${LIB_SOURCES})
+
+add_executable(ascii_paint src/main.cpp)
+target_link_libraries(ascii_paint ascii_paint_lib)
 
 if(WIN32)
     target_link_libraries(ascii_paint user32 gdi32)
 endif()
 
-set_target_properties(ascii_paint PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-)
-
-if(MSVC)
-    target_compile_options(ascii_paint PRIVATE /W4 /utf-8 /wd4100)
-else()
-    target_compile_options(ascii_paint PRIVATE -Wall -Wextra -Wno-unused-parameter)
-endif()
-
-# Подключаем тесты
 enable_testing()
 add_subdirectory(tests)
+add_subdirectory(scenarios)
