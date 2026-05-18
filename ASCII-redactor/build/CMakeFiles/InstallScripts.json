@@ -1,7 +1,10 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/cmake_install.cmake"
+		"C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/cmake_install.cmake",
+		"C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/tests/cmake_install.cmake",
+		"C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/cmake_install.cmake",
+		"C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/src/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

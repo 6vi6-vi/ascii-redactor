@@ -1,3 +1,16 @@
 C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/ascii_paint.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/test.dir
 C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/edit_cache.dir
 C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/CMakeFiles/rebuild_cache.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/tests/CMakeFiles/ascii_paint_tests.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/tests/CMakeFiles/test.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/tests/CMakeFiles/edit_cache.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/tests/CMakeFiles/rebuild_cache.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/CMakeFiles/test.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/CMakeFiles/edit_cache.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/CMakeFiles/rebuild_cache.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/src/CMakeFiles/test.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/src/CMakeFiles/edit_cache.dir
+C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir

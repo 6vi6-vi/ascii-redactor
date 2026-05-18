@@ -1,0 +1,21 @@
+# ninja log v6
+2	108	8007669132272311	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-mkdir	dc40b89b6096d264
+2	108	8007669132272311	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-mkdir	dc40b89b6096d264
+147	35145	8007669482647927	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-download	981057422be26643
+147	35145	8007669482647927	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-download	981057422be26643
+35146	35373	8007669482737883	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-update	6225a35de51058b7
+35146	35373	8007669482737883	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-update	6225a35de51058b7
+35373	35468	8007669485874190	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-patch	49b091d1f7b38c60
+35373	35468	8007669485874190	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-patch	49b091d1f7b38c60
+35469	35551	8007669486709812	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-configure	22f36d8d3413908d
+35469	35551	8007669486709812	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-configure	22f36d8d3413908d
+35551	35660	8007669487775098	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-build	3e80dd26eec0b741
+35551	35660	8007669487775098	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-build	3e80dd26eec0b741
+35660	35761	8007669488816336	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-install	93ba52332214726a
+35660	35761	8007669488816336	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-install	93ba52332214726a
+35762	35864	8007669489820556	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-test	59edf58c85e40a7b
+35762	35864	8007669489820556	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-test	59edf58c85e40a7b
+35864	36024	8007669491448902	CMakeFiles/catch2-populate-complete	9ac9e3a387282ca5
+35864	36024	8007669491448902	catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-done	9ac9e3a387282ca5
+35864	36024	8007669491448902	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate-complete	9ac9e3a387282ca5
+35864	36024	8007669491448902	C:/PCS/4 semester/new-project/ASCII-redactor/ASCII-redactor/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-done	9ac9e3a387282ca5

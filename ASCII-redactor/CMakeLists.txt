@@ -5,12 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Подключаем заголовочные файлы
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-# Исходные файлы
 set(SOURCES
-    src/main.cpp
     src/canvas/Canvas.cpp
     src/canvas/Memento.cpp
     src/command/Command.cpp
@@ -27,18 +24,22 @@ set(SOURCES
     src/ui/InputHandler.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(ascii_paint src/main.cpp ${SOURCES})
 
 if(WIN32)
-    target_link_libraries(${PROJECT_NAME} user32 gdi32)
+    target_link_libraries(ascii_paint user32 gdi32)
 endif()
 
-set_target_properties(${PROJECT_NAME} PROPERTIES
+set_target_properties(ascii_paint PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
 
 if(MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /utf-8 /wd4100)
+    target_compile_options(ascii_paint PRIVATE /W4 /utf-8 /wd4100)
 else()
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wno-unused-parameter)
+    target_compile_options(ascii_paint PRIVATE -Wall -Wextra -Wno-unused-parameter)
 endif()
+
+# Подключаем тесты
+enable_testing()
+add_subdirectory(tests)
