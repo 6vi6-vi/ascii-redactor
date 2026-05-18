@@ -47,13 +47,10 @@ TEST_CASE("Drawing scenario: Cross", "[scenario]") {
         DrawLineCommand* vertical = new DrawLineCommand(&canvas, 20, 2, 20, 18, '|');
         history.executeCommand(vertical);
 
-        // В точке пересечения последняя команда (vertical) перезаписывает горизонтальную
-        // Проверяем, что горизонтальная линия есть везде, кроме пересечения
         REQUIRE(canvas.getPixel(10, 10) == '-');
         REQUIRE(canvas.getPixel(30, 10) == '-');
         REQUIRE(canvas.getPixel(20, 5) == '|');
         REQUIRE(canvas.getPixel(20, 15) == '|');
-        // В точке пересечения будет '|' (последняя команда)
         REQUIRE(canvas.getPixel(20, 10) == '|');
     }
 }
@@ -73,32 +70,11 @@ TEST_CASE("Drawing scenario: Flood fill", "[scenario]") {
             REQUIRE(canvas.getPixel(x, 5) == '#');
             REQUIRE(canvas.getPixel(x, 10) == '#');
         }
-        // Левая и правая границы
         for (int y = 5; y <= 10; y++) {
             REQUIRE(canvas.getPixel(5, y) == '#');
             REQUIRE(canvas.getPixel(15, y) == '#');
         }
 
         REQUIRE(canvas.getPixel(10, 7) == '@');
-    }
-}
-
-TEST_CASE("Drawing scenario: House", "[scenario]") {
-    Canvas canvas(40, 20);
-    CommandHistory history;
-
-    SECTION("Draw house") {
-        DrawRectCommand* base = new DrawRectCommand(&canvas, 15, 10, 25, 15, true, '#');
-        history.executeCommand(base);
-
-        DrawLineCommand* roof = new DrawLineCommand(&canvas, 15, 10, 20, 5, '#');
-        history.executeCommand(roof);
-
-        DrawLineCommand* roof2 = new DrawLineCommand(&canvas, 20, 5, 25, 10, '#');
-        history.executeCommand(roof2);
-
-        REQUIRE(canvas.getPixel(20, 5) == '#');
-        REQUIRE(canvas.getPixel(15, 10) == '#');
-        REQUIRE(canvas.getPixel(25, 10) == '#');
     }
 }

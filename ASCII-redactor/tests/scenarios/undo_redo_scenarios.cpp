@@ -6,7 +6,7 @@
 #include "command/ClearCommand.h"
 #include "command/FloodFillCommand.h"
 
-TEST_CASE("Undo/redo scenario: Basic undo after drawing", "[scenario][undo]") {
+TEST_CASE(" Basic undo after drawing", "[scenario][undo]") {
     Canvas canvas(40, 20);
     CommandHistory history;
 
@@ -26,7 +26,7 @@ TEST_CASE("Undo/redo scenario: Basic undo after drawing", "[scenario][undo]") {
     }
 }
 
-TEST_CASE("Undo/redo scenario: Multiple actions", "[scenario][undo]") {
+TEST_CASE("Multiple actions", "[scenario][undo]") {
     Canvas canvas(40, 20);
     CommandHistory history;
 
@@ -49,7 +49,7 @@ TEST_CASE("Undo/redo scenario: Multiple actions", "[scenario][undo]") {
     }
 }
 
-TEST_CASE("Undo/redo scenario: Undo flood fill", "[scenario][undo]") {
+TEST_CASE("Undo flood fill", "[scenario][undo]") {
     Canvas canvas(40, 20);
     CommandHistory history;
 
@@ -65,7 +65,7 @@ TEST_CASE("Undo/redo scenario: Undo flood fill", "[scenario][undo]") {
     }
 }
 
-TEST_CASE("Undo/redo scenario: Undo after clear", "[scenario][undo]") {
+TEST_CASE("Undo after clear", "[scenario][undo]") {
     Canvas canvas(40, 20);
     CommandHistory history;
 
@@ -90,22 +90,22 @@ TEST_CASE("Undo/redo scenario: Undo after clear", "[scenario][undo]") {
     }
 }
 
-TEST_CASE("Undo/redo scenario: Empty history", "[scenario][undo]") {
+TEST_CASE("Empty history", "[scenario][undo]") {
     Canvas canvas(40, 20);
     CommandHistory history;
 
-    SECTION("Undo on empty history does nothing") {
+    SECTION("Undo on empty history") {
         history.undo();
         SUCCEED();
     }
 
-    SECTION("Redo on empty history does nothing") {
+    SECTION("Redo on empty history") {
         history.redo();
         SUCCEED();
     }
 }
 
-TEST_CASE("Undo/redo scenario: Rectangle operations", "[scenario][undo]") {
+TEST_CASE("Rectangle operations", "[scenario][undo]") {
     Canvas canvas(40, 20);
     CommandHistory history;
 
