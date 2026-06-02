@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  ascii-paint:
+    build: .
+    container_name: ascii-paint
+    stdin_open: true   # Для интерактивного ввода
+    tty: true          # Для псевдо-терминала
+    command: /usr/local/bin/ascii_paint
+    # Для запуска тестов раскомментировать следующую строку:
+    # command: /usr/local/bin/ascii_paint_tests
+
+  ascii-paint-tests:
+    build: .
+    container_name: ascii-paint-tests
+    command: /usr/local/bin/ascii_paint_tests
+
+  scenario-draw-line:
+    build: .
+    container_name: scenario-draw-line
+    command: /usr/local/bin/scenario_draw_line
+
+  scenario-draw-rectangle:
+    build: .
+    container_name: scenario-draw-rectangle
+    command: /usr/local/bin/scenario_draw_rectangle
+
+  scenario-flood-fill:
+    build: .
+    container_name: scenario-flood-fill
+    command: /usr/local/bin/scenario_flood_fill
+
+  scenario-undo-redo:
+    build: .
+    container_name: scenario-undo-redo
+    command: /usr/local/bin/scenario_undo_redo
+
+  scenario-save-load:
+    build: .
+    container_name: scenario-save-load
+    command: /usr/local/bin/scenario_save_load

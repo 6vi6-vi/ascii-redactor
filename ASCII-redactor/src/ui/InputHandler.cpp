@@ -1,5 +1,4 @@
-#include <windows.h>
-#include <conio.h> 
+#include "platform_compat.h"
 #include "ui/InputHandler.h"
 #include "ui/EditorContext.h"
 #include "state/LineToolState.h"
@@ -13,7 +12,7 @@
 using namespace std;
 
 void InputHandler::showHelp() {
-    system("cls");
+    platform_clear_screen();
     cout << "==================== HELP ====================" << endl;
     cout << "Cursor control:" << endl;
     cout << "  Arrows - move cursor" << endl;

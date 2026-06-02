@@ -1,4 +1,4 @@
-#include <windows.h>
+#include "platform_compat.h"
 #include "observer/ConsoleRenderer.h"
 #include "canvas/Canvas.h"
 #include <iostream>
@@ -6,11 +6,17 @@
 
 using namespace std;
 
-ConsoleRenderer::ConsoleRenderer(int w, int h) : width(w), height(h), isDrawingMode(false) {}
+ConsoleRenderer::ConsoleRenderer(int w, int h) : width(w), height(h), isDrawingMode(false), lastRenderHash(0) {}
 
 void ConsoleRenderer::onCanvasChanged(const Canvas& canvas) {
+    // ћожно добавить проверку, нужно ли перерисовывать
+    // Ќо дл€ простоты пока оставл€ем как есть
+    render(canvas);
+}
+
+void ConsoleRenderer::render(const Canvas& canvas) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    system("cls");
+    platform_clear_screen();
 
     cout << "=";
     for (int x = 0; x < width + 2; x++) cout << "=";

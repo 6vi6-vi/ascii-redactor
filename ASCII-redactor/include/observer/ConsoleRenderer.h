@@ -11,10 +11,12 @@ private:
     string currentToolName;
     string currentStatusMsg;
     bool isDrawingMode;
+    unsigned int lastRenderHash;  // Добавить
 
 public:
     ConsoleRenderer(int w, int h);
     void onCanvasChanged(const Canvas& canvas) override;
     void onStateChanged(const string& message) override;
     void onToolChanged(const string& toolName, const string& statusMsg) override;
+    void render(const Canvas& canvas);  // Добавить
 };

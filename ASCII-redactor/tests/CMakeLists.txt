@@ -1,3 +1,7 @@
+# Устанавливаем выходную директорию для тестов
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# Подключаем Catch2
 include(FetchContent)
 FetchContent_Declare(
     Catch2
@@ -6,6 +10,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 
+# Тестовые файлы
 set(TEST_SOURCES
     test_main.cpp
     test_canvas.cpp
@@ -43,6 +48,8 @@ target_sources(ascii_paint_tests PRIVATE
 
 if(WIN32)
     target_link_libraries(ascii_paint_tests PRIVATE user32 gdi32)
+else()
+    target_link_libraries(ascii_paint_tests PRIVATE pthread)
 endif()
 
 enable_testing()
