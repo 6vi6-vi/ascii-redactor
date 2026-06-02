@@ -1,4 +1,3 @@
-# Подключаем Catch2
 include(FetchContent)
 FetchContent_Declare(
     Catch2
@@ -17,7 +16,6 @@ set(TEST_SOURCES
     test_editor_context.cpp
 )
 
-# Добавляем исполняемый файл с тестами
 add_executable(ascii_paint_tests ${TEST_SOURCES})
 
 target_link_libraries(ascii_paint_tests PRIVATE Catch2::Catch2WithMain)

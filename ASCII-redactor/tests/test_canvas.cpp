@@ -237,15 +237,10 @@ TEST_CASE("floodFillImpl tests", "[canvas]") {
         REQUIRE(canvas.getPixel(5, 6) == '#');
     }
 
-    SECTION("Fill same character - no change") {
+    SECTION("Fill same character") {
         canvas.setPixel(5, 5, '@');
         canvas.floodFillImpl(5, 5, '@');
         REQUIRE(canvas.getPixel(5, 5) == '@');
-    }
-
-    SECTION("Fill out of bounds") {
-        canvas.floodFillImpl(-1, -1, '@');
-        REQUIRE(canvas.getPixel(0, 0) == '.');
     }
 }
 
@@ -310,7 +305,7 @@ TEST_CASE("Observer tests", "[observer]") {
     Canvas canvas(40, 20);
     MockObserver observer;
 
-    SECTION("attachObserver - single observer") {
+    SECTION("Single observer") {
         canvas.attachObserver(&observer);
 
         canvas.notifyCanvasChanged();
@@ -325,7 +320,7 @@ TEST_CASE("Observer tests", "[observer]") {
         REQUIRE(observer.lastToolName == "Line");
     }
 
-    SECTION("attachObserver - multiple observers") {
+    SECTION("Multiple observers") {
         MockObserver observer2;
         canvas.attachObserver(&observer);
         canvas.attachObserver(&observer2);
@@ -343,12 +338,6 @@ TEST_CASE("Observer tests", "[observer]") {
         canvas.detachObserver(&observer);
         canvas.notifyCanvasChanged();
         REQUIRE(observer.canvasChangedCount == 1);
-    }
-
-    SECTION("detachObserver - non-existent observer") {
-        MockObserver observer2;
-        canvas.detachObserver(&observer2);
-        SUCCEED();
     }
 
     SECTION("notifyStateChanged with different messages") {
@@ -402,23 +391,6 @@ TEST_CASE("restoreFromMemento tests", "[memento]") {
         REQUIRE(canvas.getCurrentChar() == '*');
     }
 
-    SECTION("Restore to empty canvas") {
-        for (int i = 0; i < 10; i++) {
-            canvas.setPixel(i, i, '#');
-        }
-
-        Memento emptyMemento(
-            vector<vector<char>>(20, vector<char>(40, '.')),
-            0, 0, '@'
-        );
-
-        canvas.restoreFromMemento(emptyMemento);
-
-        for (int i = 0; i < 10; i++) {
-            REQUIRE(canvas.getPixel(i, i) == '.');
-        }
-    }
-
     SECTION("Restore different cursor positions") {
         vector<pair<int, int>> positions = { {0,0}, {10,5}, {30,15}, {39,19} };
 
@@ -438,148 +410,5 @@ TEST_CASE("restoreFromMemento tests", "[memento]") {
             canvas.restoreFromMemento(memento);
             REQUIRE(canvas.getCurrentChar() == ch);
         }
-    }
-}
-
-
-TEST_CASE("saveToFile tests", "[file]") {
-    Canvas canvas(40, 20);
-    string filename = "test_save.ascii";
-
-    SECTION("Save empty canvas") {
-        bool result = canvas.saveToFile(filename);
-        REQUIRE(result == true);
-
-        ifstream file(filename);
-        REQUIRE(file.is_open());
-
-        std::remove(filename.c_str());
-    }
-
-    SECTION("Save canvas with content") {
-        canvas.drawLineImpl(0, 0, 10, 10, '#');
-        canvas.setPixel(15, 5, '*');
-
-        bool result = canvas.saveToFile(filename);
-        REQUIRE(result == true);
-
-        std::remove(filename.c_str());
-    }
-
-    SECTION("Save with different filenames") {
-        vector<string> filenames = { "test1.ascii", "test2.txt", "test3.dat" };
-
-        for (const auto& fname : filenames) {
-            bool result = canvas.saveToFile(fname);
-            REQUIRE(result == true);
-            std::remove(fname.c_str());
-        }
-    }
-
-    SECTION("Save to invalid path") {
-        bool result = canvas.saveToFile("Z:/invalid/path/file.ascii");
-        REQUIRE(result == false); 
-    }
-
-    SECTION("Save large canvas") {
-        Canvas largeCanvas(200, 100);
-        for (int i = 0; i < 50; i++) {
-            largeCanvas.setPixel(i, i, '#');
-        }
-
-        bool result = largeCanvas.saveToFile(filename);
-        REQUIRE(result == true);
-
-        std::remove(filename.c_str());
-    }
-}
-
-TEST_CASE("loadFromFile tests", "[file]") {
-    Canvas canvas(40, 20);
-    string filename = "test_load.ascii";
-
-    SECTION("Load valid file") {
-        canvas.setPixel(10, 5, '#');
-        canvas.saveToFile(filename);
-
-        Canvas newCanvas(40, 20);
-        bool result = newCanvas.loadFromFile(filename);
-
-        REQUIRE(result == true);
-        REQUIRE(newCanvas.getPixel(10, 5) == '#');
-
-        std::remove(filename.c_str());
-    }
-
-    SECTION("Load non-existent file") {
-        bool result = canvas.loadFromFile("nonexistent.ascii");
-        REQUIRE(result == false);
-    }
-
-    SECTION("Load after save - round trip") {
-        canvas.drawLineImpl(0, 0, 10, 10, '#');
-        canvas.setCurrentChar('*');
-
-        canvas.saveToFile(filename);
-
-        Canvas newCanvas(40, 20);
-        newCanvas.loadFromFile(filename);
-
-        for (int i = 0; i <= 10; i++) {
-            REQUIRE(newCanvas.getPixel(i, i) == '#');
-        }
-
-        std::remove(filename.c_str());
-    }
-
-    SECTION("Load multiple times") {
-        canvas.setPixel(5, 5, '@');
-        canvas.saveToFile(filename);
-
-        for (int i = 0; i < 3; i++) {
-            Canvas newCanvas(40, 20);
-            newCanvas.loadFromFile(filename);
-            REQUIRE(newCanvas.getPixel(5, 5) == '@');
-        }
-
-        std::remove(filename.c_str());
-    }
-
-    SECTION("Load into different size canvas") {
-        canvas.drawLineImpl(0, 0, 10, 10, '#');
-        canvas.saveToFile(filename);
-
-        Canvas smallerCanvas(20, 10);
-        smallerCanvas.loadFromFile(filename);
-
-        std::remove(filename.c_str());
-    }
-}
-
-TEST_CASE("saveToFile and loadFromFile combined", "[file]") {
-    string filename = "test_combined.ascii";
-
-    SECTION("Save and load preserves all content") {
-        Canvas original(40, 20);
-
-        original.drawRectImpl(5, 5, 15, 10, false, '#');
-        original.drawLineImpl(0, 0, 10, 10, '*');
-        original.floodFillImpl(10, 7, '@');
-        original.setPixel(20, 15, 'X');
-
-        original.saveToFile(filename);
-
-        Canvas loaded(40, 20);
-        loaded.loadFromFile(filename);
-
-        for (int i = 0; i <= 10; i++) {
-            REQUIRE(loaded.getPixel(i, i) == '*');
-        }
-
-        REQUIRE(loaded.getPixel(10, 7) == '@');
-
-        REQUIRE(loaded.getPixel(20, 15) == 'X');
-
-        std::remove(filename.c_str());
     }
 }

@@ -1,4 +1,4 @@
-#include "windows_compat.h"
+#include <windows.h>
 #include "observer/ConsoleRenderer.h"
 #include "canvas/Canvas.h"
 #include <iostream>
@@ -12,12 +12,10 @@ void ConsoleRenderer::onCanvasChanged(const Canvas& canvas) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     system("cls");
 
-    // Top border
     cout << "=";
     for (int x = 0; x < width + 2; x++) cout << "=";
     cout << "=" << endl;
 
-    // Canvas
     for (int y = 0; y < height; y++) {
         cout << "| ";
         for (int x = 0; x < width; x++) {
@@ -33,12 +31,10 @@ void ConsoleRenderer::onCanvasChanged(const Canvas& canvas) {
         cout << " |" << endl;
     }
 
-    // Bottom border
     cout << "=";
     for (int x = 0; x < width + 2; x++) cout << "=";
     cout << "=" << endl;
 
-    // Control panel
     cout << " ===============================================================================" << endl;
     cout << "| Current char: [" << canvas.getCurrentChar() << "]     Active tool: " << currentToolName;
     for (int i = 0; i < 43 - (int)currentToolName.length(); i++) cout << " ";

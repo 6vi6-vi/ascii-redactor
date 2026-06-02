@@ -1,4 +1,3 @@
-#include "windows_compat.h"
 #include "state/RectToolState.h"
 #include "state/CursorState.h"
 #include "ui/EditorContext.h"

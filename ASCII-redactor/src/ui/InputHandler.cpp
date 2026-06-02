@@ -1,4 +1,5 @@
-#include "windows_compat.h"
+#include <windows.h>
+#include <conio.h> 
 #include "ui/InputHandler.h"
 #include "ui/EditorContext.h"
 #include "state/LineToolState.h"

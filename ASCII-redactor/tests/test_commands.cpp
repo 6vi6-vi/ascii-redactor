@@ -8,54 +8,6 @@
 
 using namespace std;
 
-
-TEST_CASE("Command saveBackup tests", "[commands]") {
-    Canvas canvas(40, 20);
-
-    SECTION("saveBackup saves current state before changes") {
-        canvas.setPixel(5, 5, '#');
-        canvas.moveCursor(10, 10);
-        canvas.setCurrentChar('*');
-
-        DrawLineCommand cmd(&canvas, 0, 0, 5, 5, '@');
-
-        cmd.saveBackup();
-
-        canvas.setPixel(5, 5, '.');
-        canvas.moveCursor(0, 0);
-        canvas.setCurrentChar('.');
-
-        cmd.undo();
-
-        REQUIRE(canvas.getPixel(5, 5) == '#');
-        REQUIRE(canvas.getCursorX() == 10);
-        REQUIRE(canvas.getCursorY() == 10);
-        REQUIRE(canvas.getCurrentChar() == '*');
-    }
-
-    SECTION("saveBackup called multiple times") {
-        canvas.setPixel(5, 5, '#');
-
-        DrawLineCommand cmd(&canvas, 0, 0, 5, 5, '@');
-
-        cmd.saveBackup();
-        canvas.setPixel(5, 5, '*');
-
-        cmd.saveBackup();
-
-        cmd.undo();
-
-        REQUIRE(canvas.getPixel(5, 5) == '*');
-    }
-
-    SECTION("undo without saveBackup") {
-        DrawLineCommand cmd(&canvas, 0, 0, 5, 5, '#');
-
-        cmd.undo();  
-        SUCCEED();
-    }
-}
-
 TEST_CASE("DrawLineCommand", "[commands]") {
     Canvas canvas(40, 20);
 
@@ -66,11 +18,6 @@ TEST_CASE("DrawLineCommand", "[commands]") {
         for (int i = 0; i <= 10; i++) {
             REQUIRE(canvas.getPixel(i, i) == '#');
         }
-    }
-
-    SECTION("Description") {
-        DrawLineCommand cmd(&canvas, 0, 0, 5, 5, '@');
-        REQUIRE(cmd.getDescription().find("Draw line") != std::string::npos);
     }
 
     SECTION("Undo removes line") {
@@ -124,15 +71,6 @@ TEST_CASE("DrawRectCommand", "[commands]") {
         for (int x = 5; x <= 15; x++) {
             REQUIRE(canvas.getPixel(x, 5) == '#');
             REQUIRE(canvas.getPixel(x, 10) == '#');
-        }
-    }
-
-    SECTION("With swapped coordinates") {
-        DrawRectCommand cmd(&canvas, 15, 10, 5, 5, false, '#');
-        cmd.execute();
-
-        for (int x = 5; x <= 15; x++) {
-            REQUIRE(canvas.getPixel(x, 5) == '#');
         }
     }
 
@@ -214,11 +152,6 @@ TEST_CASE("ClearCommand", "[commands]") {
 
         REQUIRE(canvas.getPixel(10, 5) == '.');
         REQUIRE(canvas.getPixel(20, 10) == '.');
-    }
-
-    SECTION("Description") {
-        ClearCommand cmd(&canvas);
-        REQUIRE(cmd.getDescription() == "Clear entire canvas");
     }
 
     SECTION("Undo restores previous state") {

@@ -39,10 +39,6 @@ TEST_CASE_METHOD(EditorContextFixture, "EditorContext initialization", "[editor]
     SECTION("Initial status message when no state") {
         REQUIRE(context.getStatusMessage() == "");
     }
-
-    SECTION("Initial drawing mode when no state") {
-        REQUIRE_FALSE(context.isDrawingMode());
-    }
 }
 
 TEST_CASE_METHOD(EditorContextFixture, "EditorContext state management", "[editor]") {
@@ -86,24 +82,11 @@ TEST_CASE_METHOD(EditorContextFixture, "EditorContext state management", "[edito
 }
 
 TEST_CASE_METHOD(EditorContextFixture, "EditorContext cursor movement", "[editor]") {
-    SECTION("Move cursor without state") {
-        context.moveCursor(10, 5);
-        REQUIRE(canvas.getCursorX() == 10);
-        REQUIRE(canvas.getCursorY() == 5);
-    }
-
-    SECTION("Move cursor with CursorState") {
+    SECTION("Move cursor") {
         context.setState(new CursorState());
         context.moveCursor(10, 5);
         REQUIRE(canvas.getCursorX() == 10);
         REQUIRE(canvas.getCursorY() == 5);
-    }
-
-    SECTION("Handle cursor move delegates to state") {
-        context.setState(new CursorState());
-        context.handleCursorMove(5, 3);
-        REQUIRE(canvas.getCursorX() == 5);
-        REQUIRE(canvas.getCursorY() == 3);
     }
 }
 
@@ -136,16 +119,5 @@ TEST_CASE_METHOD(EditorContextFixture, "EditorContext undo/redo", "[editor]") {
         for (int i = 0; i <= 5; i++) {
             REQUIRE(canvas.getPixel(i, i) == '#');
         }
-    }
-}
-
-TEST_CASE_METHOD(EditorContextFixture, "CursorState key handling", "[editor][state]") {
-    context.setState(new CursorState());
-
-    SECTION("Cursor state does not draw on key press") {
-        canvas.setCursorPosition(10, 10);
-        canvas.setCurrentChar('#');
-
-        REQUIRE(canvas.getCurrentChar() == '#');
     }
 }

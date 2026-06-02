@@ -1,4 +1,4 @@
-#include "windows_compat.h"
+#include <conio.h> 
 #include "ui/EditorContext.h"
 #include "ui/InputHandler.h"
 #include "canvas/Canvas.h"
@@ -35,10 +35,7 @@ int main() {
     canvas.notifyCanvasChanged();
 
     while (true) {
-        if (!_kbhit()) {
-            Sleep(10);
-            continue;
-        }
+  
 
         char key = _getch();
 
