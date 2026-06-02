@@ -6,33 +6,49 @@
 #include "observer/ConsoleRenderer.h"
 #include "state/CursorState.h"
 #include <iostream>
+#include <csignal>
 
 using namespace std;
 
-// Функция для чтения клавиш с поддержкой стрелок в Linux
+// Функция для восстановления терминала при выходе
+void cleanup(int signum) {
+#ifdef __linux__
+    restore_terminal();
+#endif
+    exit(signum);
+}
+
 int readKey() {
     int ch = _getch();
 
-    // В Linux стрелки передаются как escape последовательности
+#ifdef __linux__
+    // Нормализуем Enter
+    ch = normalize_key(ch);
+
+    // Обработка стрелок в Linux
     if (ch == 27) {  // ESC
         int next = _getch();
         if (next == 91) {  // '['
             int arrow = _getch();
             switch (arrow) {
-            case 65: return 72;   // Стрелка вверх - код 72 (как в Windows)
-            case 66: return 80;   // Стрелка вниз - код 80
-            case 67: return 77;   // Стрелка вправо - код 77
-            case 68: return 75;   // Стрелка влево - код 75
+            case 65: return 72;   // вверх
+            case 66: return 80;   // вниз
+            case 67: return 77;   // вправо
+            case 68: return 75;   // влево
             default: return arrow;
             }
         }
         return ch;
     }
+#endif
 
     return ch;
 }
 
 int main() {
+    // Устанавливаем обработчик для восстановления терминала
+    signal(SIGINT, cleanup);
+
     int width, height;
 
     cout << "==========================================================" << endl;
@@ -56,7 +72,6 @@ int main() {
     context.setState(new CursorState());
     InputHandler handler(&context);
 
-    // Начальная отрисовка
     canvas.notifyCanvasChanged();
 
     while (true) {
@@ -68,7 +83,6 @@ int main() {
         int ch = readKey();
         char key = static_cast<char>(ch);
 
-        // Обработка стрелок (коды 72,80,75,77 как в Windows)
         if (ch == 72) {  // вверх
             handler.handleCursorMove(0, -1);
         }
@@ -83,11 +97,9 @@ int main() {
         }
         else if (key == 26) {  // Ctrl+Z
             context.undo();
-            canvas.notifyCanvasChanged();
         }
         else if (key == 25) {  // Ctrl+Y
             context.redo();
-            canvas.notifyCanvasChanged();
         }
         else {
             handler.handleKeyPress(key);

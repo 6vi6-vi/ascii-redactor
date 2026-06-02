@@ -42,9 +42,22 @@ typedef void* HANDLE;
 #define BG_BLUE       "\033[44m"
 #define BG_WHITE      "\033[47m"
 
-// Флаги для отслеживания escape последовательностей
-static int g_escape_sequence = 0;
-static int g_escape_bracket = 0;
+// Состояние терминала
+static struct termios original_tio;
+static bool terminal_configured = false;
+
+inline void configure_terminal() {
+    if (!terminal_configured) {
+        tcgetattr(STDIN_FILENO, &original_tio);
+        terminal_configured = true;
+    }
+}
+
+inline void restore_terminal() {
+    if (terminal_configured) {
+        tcsetattr(STDIN_FILENO, TCSANOW, &original_tio);
+    }
+}
 
 inline int _kbhit() {
     struct termios oldt, newt;
@@ -104,7 +117,15 @@ inline void SetConsoleTextAttribute(HANDLE hConsole, int color) {
 }
 
 inline void platform_clear_screen() {
-    std::cout << "\033[2J\033[1;1H";
+    // Очищаем экран и перемещаем курсор в начало
+    std::cout << "\033[2J\033[H";
+    std::cout.flush();
+}
+
+// Нормализация Enter: в Linux Enter = 10, в Windows = 13
+inline int normalize_key(int key) {
+    if (key == 10) return 13;  // LF - CR (Enter)
+    return key;
 }
 
 #endif

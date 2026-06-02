@@ -1,3 +1,4 @@
+#include "platform_compat.h"
 #include "state/RectToolState.h"
 #include "state/CursorState.h"
 #include "ui/EditorContext.h"
@@ -8,7 +9,7 @@ using namespace std;
 
 void RectToolState::onKeyPress(char key) {
     Canvas* canvas = context->getCanvas();
-    if (key == 13) {
+    if (key == 13) {  // Enter
         if (!waitingForSecondPoint) {
             startX = canvas->getCursorX();
             startY = canvas->getCursorY();
@@ -27,7 +28,7 @@ void RectToolState::onKeyPress(char key) {
             canvas->notifyStateChanged("Rectangle drawn. Returned to cursor mode");
         }
     }
-    else if (key == 27) {
+    else if (key == 27) {  // Escape
         waitingForSecondPoint = false;
         context->setState(new CursorState());
         canvas->notifyStateChanged("Rectangle drawing mode cancelled");

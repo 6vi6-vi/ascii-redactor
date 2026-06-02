@@ -1,3 +1,4 @@
+#include "platform_compat.h"
 #include "state/LineToolState.h"
 #include "state/CursorState.h"
 #include "ui/EditorContext.h"
@@ -8,7 +9,9 @@ using namespace std;
 
 void LineToolState::onKeyPress(char key) {
     Canvas* canvas = context->getCanvas();
-    if (key == 13) {
+
+    // Enter в Windows = 13, в Linux после нормализации тоже 13
+    if (key == 13) {  // Enter
         if (!waitingForSecondPoint) {
             startX = canvas->getCursorX();
             startY = canvas->getCursorY();
@@ -27,7 +30,7 @@ void LineToolState::onKeyPress(char key) {
             canvas->notifyStateChanged("Line drawn. Returned to cursor mode");
         }
     }
-    else if (key == 27) {
+    else if (key == 27) {  // Escape
         waitingForSecondPoint = false;
         context->setState(new CursorState());
         canvas->notifyStateChanged("Line drawing mode cancelled");
