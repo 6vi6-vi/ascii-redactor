@@ -4,17 +4,21 @@ services:
   ascii-paint:
     build: .
     container_name: ascii-paint
-    stdin_open: true   # Для интерактивного ввода
-    tty: true          # Для псевдо-терминала
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./saves:/app/saves
     command: /usr/local/bin/ascii_paint
-    # Для запуска тестов раскомментировать следующую строку:
-    # command: /usr/local/bin/ascii_paint_tests
+    # Важно: не добавляйте detach mode, если нужен ввод
 
   ascii-paint-tests:
     build: .
     container_name: ascii-paint-tests
+    volumes:
+      - ./saves:/app/saves
     command: /usr/local/bin/ascii_paint_tests
 
+  # Для сценариев tty не нужен (они без ввода)
   scenario-draw-line:
     build: .
     container_name: scenario-draw-line

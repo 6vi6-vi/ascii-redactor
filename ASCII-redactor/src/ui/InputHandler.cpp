@@ -91,16 +91,42 @@ void InputHandler::handleKeyPress(char key) {
             cout << "Save file name (.ascii): ";
             cin >> filename;
             if (filename.find('.') == string::npos) filename += ".ascii";
-            context->getCanvas()->saveToFile(filename);
+
+            // Сохраняем в папку /app/saves (которая смонтирована на хост)
+            string fullPath = "/app/saves/" + filename;
+
+            if (context->getCanvas()->saveToFile(fullPath)) {
+                cout << "Saved to: " << fullPath << endl;
+                cout << "File is available on your host in the 'saves' folder" << endl;
+            }
+            else {
+                cout << "Save failed!" << endl;
+            }
             _getch();
             context->getCanvas()->notifyCanvasChanged();
             return;
         }
         case 'O': case 'o': {
             string filename;
-            cout << "Load file name (.ascii or .txt): ";
+            cout << "Load file name (.ascii): ";
             cin >> filename;
-            context->getCanvas()->loadFromFile(filename);
+
+            // Ищем в папке /app/saves
+            string fullPath = "/app/saves/" + filename;
+
+            if (context->getCanvas()->loadFromFile(fullPath)) {
+                cout << "Loaded from: " << fullPath << endl;
+            }
+            else {
+                // Если не нашли, пробуем как есть (для обратной совместимости)
+                cout << "File not found in saves folder, trying current directory..." << endl;
+                if (context->getCanvas()->loadFromFile(filename)) {
+                    cout << "Loaded from current directory: " << filename << endl;
+                }
+                else {
+                    cout << "Load failed!" << endl;
+                }
+            }
             _getch();
             context->getCanvas()->notifyCanvasChanged();
             return;

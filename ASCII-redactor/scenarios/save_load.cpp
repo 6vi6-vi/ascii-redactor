@@ -2,6 +2,7 @@
 #include "command/CommandHistory.h"
 #include "command/DrawLineCommand.h"
 #include "command/DrawRectCommand.h"
+#include "platform_compat.h"
 #include <iostream>
 #include <cstdio>
 
@@ -10,7 +11,10 @@ using namespace std;
 int main() {
     cout << "=== Scenario 5: Save and load file ===" << endl;
 
-    string filename = "saved_canvas.ascii";
+    // Создаём папку saves, если её нет
+    system("mkdir -p /app/saves");
+
+    string filename = "/app/saves/saved_canvas.ascii";
 
     {
         Canvas canvas(40, 20);
@@ -39,8 +43,7 @@ int main() {
         }
     }
 
-    std::remove(filename.c_str());
-    cout << "\nScenario completed. Save and load work correctly" << endl;
+    cout << "\nScenario completed. Save and load work correctly!" << endl;
 
     return 0;
 }
